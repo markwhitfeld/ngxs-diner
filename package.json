@@ -23,6 +23,7 @@
     "@angular/router": "~10.1.1",
     "@ngxs/logger-plugin": "^3.7.0",
     "@ngxs/store": "^3.7.0",
+    "@wishtack/schematics": "^1.1.2",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"

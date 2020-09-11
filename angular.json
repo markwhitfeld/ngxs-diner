@@ -9,6 +9,10 @@
         "@schematics/angular:component": {
           "changeDetection": "OnPush",
           "style": "scss"
+        },
+        "@wishtack/schematics:scam": {
+          "changeDetection": "OnPush",
+          "style": "scss"
         }
       },
       "root": "",
