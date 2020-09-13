@@ -1,0 +1,3 @@
+Thank you Lea and Chris who created https://forkgasm.com/
+I borrowed your recipies from here, becuse they were open source ;-)
+https://github.com/LeaVerou/forkgasm/blob/a4a4c78fa38829549f862791d9882fd9d673bd57/recipes.json
