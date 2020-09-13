@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Select } from '@ngxs/store';
 import { Observable } from 'rxjs';
 
-import { OrderingViewModel, OrderingViewModelQueries } from '../../queries/table-ordering.queries';
+import { OrderingViewModel, TableViewModelQueries } from '../../queries/table.queries';
 
 @Component({
   templateUrl: './restaurant-home-page.component.html',
@@ -10,7 +10,7 @@ import { OrderingViewModel, OrderingViewModelQueries } from '../../queries/table
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class RestaurantHomePageComponent implements OnInit {
-  @Select(OrderingViewModelQueries.getViewModel) viewModel$: Observable<OrderingViewModel>;
+  @Select(TableViewModelQueries.getViewModel) viewModel$: Observable<OrderingViewModel>;
 
   constructor() {}
 

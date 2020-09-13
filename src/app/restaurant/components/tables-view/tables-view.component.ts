@@ -2,7 +2,7 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { map } from 'rxjs/operators';
 
-import { TableOrderViewModel } from '../../queries/table-ordering.queries';
+import { TableOrderViewModel } from '../../queries/table.queries';
 
 @Component({
   selector: 'app-tables-view',

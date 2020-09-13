@@ -1,10 +1,9 @@
 import { Injectable } from '@angular/core';
-import { Action, Actions, ofActionDispatched, Selector, State, StateContext } from '@ngxs/store';
+import { Action, Selector, State, StateContext } from '@ngxs/store';
 import { patch } from '@ngxs/store/operators';
 
-import { OrderingDialogsService } from '../dialogs/ordering-dialogs.service';
 import { OrdersMap } from '../models';
-import { CloseTable, EditTableOrder, OpenTable } from './actions';
+import { CloseTable, OpenTable } from './actions';
 
 type OrdersStateModel = OrdersMap;
 
@@ -17,12 +16,6 @@ type LocalStateContext = StateContext<LocalStateModel>;
 })
 @Injectable()
 export class OrdersState {
-  constructor(private actions: Actions, dialog: OrderingDialogsService) {
-    this.actions.pipe(ofActionDispatched(EditTableOrder)).subscribe((action: EditTableOrder) => {
-      dialog.openTableOrder(action.tableName);
-    });
-  }
-
   @Selector()
   static orders(state: LocalStateModel): OrdersStateModel {
     return state;
