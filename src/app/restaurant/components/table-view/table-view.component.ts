@@ -1,5 +1,5 @@
-import { Component, NgModule, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ChangeDetectionStrategy, Component, NgModule, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-table-view',
@@ -23,4 +23,4 @@ export class TableViewComponent implements OnInit {
   ],
   exports: [TableViewComponent]
 })
-export class TableViewModule { }
+export class TableViewComponentModule { }
