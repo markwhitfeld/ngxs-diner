@@ -9,3 +9,26 @@
 .dashboard-card-content {
   text-align: center;
 }
+
+.mat-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.mat-card-header {
+  flex-shrink: 0;
+}
+
+.mat-card-content {
+  flex-grow: 1;
+  overflow: auto;
+}
+
+.mat-card-actions {
+  height: 44px;
+  .table-order-button {
+    position: absolute;
+    right: 0px;
+    margin-right: 10px;
+  }
+}

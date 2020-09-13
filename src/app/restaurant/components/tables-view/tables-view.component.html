@@ -1,6 +1,7 @@
 <div class="grid-container">
   <h1 class="mat-h1">Restaurant</h1>
-  <mat-grid-list cols="2" rowHeight="350px">
+  <div></div>
+  <mat-grid-list cols="2" rowHeight="250px">
     <mat-grid-tile *ngFor="let tableOrder of tableOrders">
       <app-table-card [tableOrder]="tableOrder"></app-table-card>
     </mat-grid-tile>

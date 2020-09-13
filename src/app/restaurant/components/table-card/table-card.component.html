@@ -15,10 +15,17 @@
   </mat-card-content>
   <mat-card-actions>
     <ng-container *ngIf="!tableOrder.isOpen">
-      <button mat-button color="primary" (click)="openTable()">Open</button>
+      <div>
+        <button mat-button color="primary" class="table-order-button" (click)="openTable()">Open</button>
+      </div>
     </ng-container>
     <ng-container *ngIf="tableOrder.isOpen">
-      <button mat-button color="warning" (click)="closeTable()">Close</button>
+      <div>
+        <button mat-button color="warning" (click)="closeTable()">Close</button>
+        <button mat-button color="primary" class="table-order-button" (click)="captureOrder()">
+          <mat-icon>restaurant</mat-icon>
+        </button>
+      </div>
     </ng-container>
   </mat-card-actions>
 </mat-card>

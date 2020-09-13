@@ -13,6 +13,11 @@ export class CloseTable {
   constructor(public readonly tableName: string) {}
 }
 
+export class EditTableOrder {
+  static readonly type = '[Ordering] Edit Table Order';
+  constructor(public readonly tableName: string) {}
+}
+
 export class SetTablePersonCount {
   static readonly type = '[Ordering] Set Table Person Count';
   constructor(public readonly tableName: string, public readonly count: number) {}

@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core
 import { Store } from '@ngxs/store';
 
 import { TableOrderViewModel } from '../../queries/table-ordering.queries';
-import { CloseTable, OpenTable } from '../../state/actions';
+import { CloseTable, EditTableOrder, OpenTable } from '../../state/actions';
 
 @Component({
   selector: 'app-table-card',
@@ -18,8 +18,13 @@ export class TableCardComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  openTable(): void {
-    this.store.dispatch(new OpenTable(this.tableOrder.table.name));
+  async openTable(): Promise<void> {
+    await this.store.dispatch(new OpenTable(this.tableOrder.table.name)).toPromise();
+    await this.captureOrder();
+  }
+
+  async captureOrder(): Promise<void> {
+    await this.store.dispatch(new EditTableOrder(this.tableOrder.table.name)).toPromise();
   }
 
   closeTable(): void {
