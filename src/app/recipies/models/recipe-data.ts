@@ -5,28 +5,28 @@ export interface RecipeData {
 }
 
 export interface Recipe {
-  name:             string;
-  id:               string;
-  description:      string;
-  tag:              string[];
-  image:            string;
-  ingredient:       Ingredient[];
+  name: string;
+  id: string;
+  description: string;
+  tag: string[];
+  image: string;
+  ingredient: Ingredient[];
   ingredientGroup?: IngredientGroup[];
-  step:             Step[];
-  notes?:           string;
-  forked?:          string;
+  step: Step[];
+  notes?: string;
+  forked?: string;
 }
 
 export interface Ingredient {
-  amount?:      string;
-  unit?:        string;
-  name?:        string;
+  amount?: string;
+  unit?: string;
+  name?: string;
   preparation?: string;
 }
 
 export interface IngredientGroup {
   ingredient: Ingredient[];
-  name?:      string;
+  name?: string;
 }
 
 export interface Step {
