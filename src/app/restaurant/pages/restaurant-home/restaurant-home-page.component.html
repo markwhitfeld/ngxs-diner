@@ -1,1 +1,3 @@
-<app-tables-view></app-tables-view>
+<ng-container *ngIf="viewModel$ | async as viewModel">
+  <app-tables-view [tableOrders]="viewModel.tableOrders"></app-tables-view>
+</ng-container>
