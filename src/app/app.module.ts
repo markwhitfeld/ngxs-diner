@@ -21,10 +21,11 @@ import { RestaurantModule } from './restaurant/restaurant.module';
       selectorOptions: { injectContainerState: false, suppressErrors: false },
       executionStrategy: NoopNgxsExecutionStrategy,
     }),
+    ...environment.imports,
     AppRoutingModule,
     RestaurantModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
