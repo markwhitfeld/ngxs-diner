@@ -1,7 +1,44 @@
 <h1 mat-dialog-title>Orders for {{ data.tableName }}</h1>
-<div mat-dialog-content>
-  <p>What would you like to order?</p>
-</div>
+<ng-container *ngIf="tableOrder$ | async as tableOrder">
+  <div mat-dialog-content>
+    <p>Customers:</p>
+    <h3>Table Order:</h3>
+    <table mat-table #table [dataSource]="tableOrder.ordered">
+      <ng-container matColumnDef="add">
+        <th mat-header-cell *matHeaderCellDef>Add</th>
+        <td mat-cell *matCellDef="let row">
+          <button mat-mini-fab (click)="addChoice(row.name)"><mat-icon>add</mat-icon></button>
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="choice">
+        <th mat-header-cell *matHeaderCellDef>Item</th>
+        <td mat-cell *matCellDef="let row">{{ row.name }}</td>
+      </ng-container>
+      <ng-container matColumnDef="count">
+        <th mat-header-cell *matHeaderCellDef>Count</th>
+        <td mat-cell *matCellDef="let row">{{ row.count }}</td>
+      </ng-container>
+      <!-- <tr mat-header-row *matHeaderRowDef="['add', 'count', 'choice']"></tr> -->
+      <tr mat-row *matRowDef="let row; columns: ['add', 'count', 'choice']"></tr>
+    </table>
+    <hr />
+    <h3>Menu:</h3>
+    <table mat-table #table [dataSource]="tableOrder.notOrdered">
+      <ng-container matColumnDef="add">
+        <th mat-header-cell *matHeaderCellDef>Add</th>
+        <td mat-cell *matCellDef="let row">
+          <button mat-mini-fab (click)="addChoice(row.name)"><mat-icon>add</mat-icon></button>
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="choice">
+        <th mat-header-cell *matHeaderCellDef>Item</th>
+        <td mat-cell *matCellDef="let row">{{ row.name }}</td>
+      </ng-container>
+      <!-- <tr mat-header-row *matHeaderRowDef="['choice', 'count']"></tr> -->
+      <tr mat-row *matRowDef="let row; columns: ['add', 'choice']"></tr>
+    </table>
+  </div>
+</ng-container>
 <div mat-dialog-actions>
   <button mat-button [mat-dialog-close] cdkFocusInitial>Ok</button>
 </div>

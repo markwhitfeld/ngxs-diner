@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Action, NgxsOnInit, State, StateContext } from '@ngxs/store';
+import { Action, NgxsOnInit, Selector, State, StateContext } from '@ngxs/store';
 
 import { Recipe } from '../models';
 import { RecipesApiService } from '../services/recipes-api.service';
@@ -9,6 +9,7 @@ export interface RecipesStateModel {
   items: Recipe[];
 }
 
+type LocalStateModel = RecipesStateModel;
 type LocalStateContext = StateContext<RecipesStateModel>;
 
 @State<RecipesStateModel>({
@@ -20,6 +21,16 @@ type LocalStateContext = StateContext<RecipesStateModel>;
 @Injectable()
 export class RecipesState implements NgxsOnInit {
   constructor(private api: RecipesApiService) {}
+
+  @Selector()
+  static items(state: LocalStateModel): Recipe[] {
+    return state.items;
+  }
+
+  @Selector([RecipesState.items])
+  static sortedItems(recipies: Recipe[]): Recipe[] {
+    return [...recipies].sort((a, b) => (a.name > b.name ? 1 : -1));
+  }
 
   ngxsOnInit(ctx?: StateContext<any>): void {
     ctx.dispatch(new LoadRecipes());

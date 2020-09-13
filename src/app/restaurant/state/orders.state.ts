@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Action, Selector, State, StateContext } from '@ngxs/store';
-import { patch } from '@ngxs/store/operators';
+import { insertItem, patch } from '@ngxs/store/operators';
 
-import { OrdersMap } from '../models';
-import { CloseTable, OpenTable } from './actions';
+import { Order, OrdersMap } from '../models';
+import { AddTableChoice, CloseTable, OpenTable } from './actions';
 
 type OrdersStateModel = OrdersMap;
 
@@ -35,8 +35,16 @@ export class OrdersState {
   protected closeTable(ctx: LocalStateContext, action: CloseTable): void {
     const { tableName } = action;
     ctx.setState(
+      patch<LocalStateModel>({ [tableName]: null })
+    );
+  }
+
+  @Action(AddTableChoice)
+  protected addTableChoice(ctx: LocalStateContext, action: AddTableChoice): void {
+    const { tableName, choice } = action;
+    ctx.setState(
       patch<LocalStateModel>({
-        [tableName]: null,
+        [tableName]: patch<Order>({ choices: insertItem(choice) }),
       })
     );
   }
