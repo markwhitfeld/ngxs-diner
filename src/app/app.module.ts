@@ -6,6 +6,8 @@ import { environment } from 'src/environments/environment';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { RestaurantModule } from './restaurant/restaurant.module';
+
 
 @NgModule({
   declarations: [
@@ -14,12 +16,13 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    AppRoutingModule,
     NgxsModule.forRoot([], {
       developmentMode: !environment.production,
       selectorOptions: { injectContainerState: false, suppressErrors: false },
       executionStrategy: NoopNgxsExecutionStrategy,
-    })
+    }),
+    AppRoutingModule,
+    RestaurantModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

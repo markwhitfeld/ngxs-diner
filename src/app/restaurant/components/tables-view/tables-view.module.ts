@@ -5,13 +5,14 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { TableCardComponentModule } from '../table-card/table-card.module';
 import { TablesViewComponent } from './tables-view.component';
 
+
 @NgModule({
-  declarations: [ TablesViewComponent],
+  declarations: [TablesViewComponent],
   imports: [
     CommonModule,
     MatGridListModule,
     TableCardComponentModule
   ],
-  exports: [ TablesViewComponent]
+  exports: [TablesViewComponent]
 })
-export class TablesViewModule { }
+export class TablesViewComponentModule { }
