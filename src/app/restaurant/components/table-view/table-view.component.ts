@@ -1,9 +1,5 @@
-import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component, Inject, NgModule, OnInit } from '@angular/core';
-import { MatButtonModule } from '@angular/material/button';
-import { MAT_DIALOG_DATA, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
-import { MatIconModule } from '@angular/material/icon';
-import { MatTableModule } from '@angular/material/table';
+import { ChangeDetectionStrategy, Component, Inject, OnInit } from '@angular/core';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { Store } from '@ngxs/store';
 import { Observable } from 'rxjs';
 
@@ -42,10 +38,3 @@ export class TableViewComponent implements OnInit {
     this.store.dispatch(new RemoveTableChoice(this.data.tableName, recipeName));
   }
 }
-
-@NgModule({
-  declarations: [TableViewComponent],
-  imports: [CommonModule, MatDialogModule, MatButtonModule, MatTableModule, MatIconModule],
-  exports: [TableViewComponent],
-})
-export class TableViewComponentModule {}

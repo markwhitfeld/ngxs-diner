@@ -1,6 +1,4 @@
-import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component, Input, NgModule, OnInit } from '@angular/core';
-import { MatTableModule } from '@angular/material/table';
+import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
 import { Store } from '@ngxs/store';
 
 import { ItemCount } from '../../view-models/kitchen-view-model.queries';
@@ -23,10 +21,3 @@ export class OrdersListComponent implements OnInit {
 
   ngOnInit(): void {}
 }
-
-@NgModule({
-  declarations: [OrdersListComponent],
-  imports: [CommonModule, MatTableModule],
-  exports: [OrdersListComponent],
-})
-export class OrdersListComponentModule {}
