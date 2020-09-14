@@ -6,6 +6,7 @@ import { environment } from 'src/environments/environment';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { KitchenModule } from './kitchen/kitchen.module';
 import { LayoutModule } from './layout/layout.module';
 import { RecipeModule } from './recipies/recipes.module';
 import { RestaurantModule } from './restaurant/restaurant.module';
@@ -25,6 +26,7 @@ import { RestaurantModule } from './restaurant/restaurant.module';
     AppRoutingModule,
     RecipeModule,
     RestaurantModule,
+    KitchenModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

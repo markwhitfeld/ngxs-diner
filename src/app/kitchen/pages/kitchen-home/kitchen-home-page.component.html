@@ -1,7 +1,7 @@
 <div class="grid-container">
-  <h1 class="mat-h1">Restaurant</h1>
+  <h1 class="mat-h1">Production Schedule</h1>
   <div></div>
   <ng-container *ngIf="viewModel$ | async as viewModel">
-    <app-tables-view [tableOrders]="viewModel.tableOrders"></app-tables-view>
+    <app-orders-list [orders]="viewModel.productionSheet"></app-orders-list>
   </ng-container>
 </div>
