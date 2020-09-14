@@ -6,6 +6,7 @@ import { environment } from 'src/environments/environment';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { LayoutModule } from './layout/layout.module';
 import { RecipeModule } from './recipies/recipes.module';
 import { RestaurantModule } from './restaurant/restaurant.module';
 
@@ -20,6 +21,7 @@ import { RestaurantModule } from './restaurant/restaurant.module';
       executionStrategy: NoopNgxsExecutionStrategy,
     }),
     ...environment.imports,
+    LayoutModule,
     AppRoutingModule,
     RecipeModule,
     RestaurantModule,

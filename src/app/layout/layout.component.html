@@ -1,0 +1,45 @@
+<div class="app-container" [class.is-mobile]="mobileQuery.matches">
+  <mat-toolbar color="primary" class="app-toolbar">
+    <button mat-icon-button (click)="drawer.toggle()"><mat-icon>menu</mat-icon></button>
+    <h1 class="app-name">NGXS Diner</h1>
+  </mat-toolbar>
+
+  <mat-sidenav-container class="sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+    <mat-sidenav
+      #drawer
+      [mode]="mobileQuery.matches ? 'over' : 'side'"
+      [fixedInViewport]="mobileQuery.matches"
+      fixedTopGap="56"
+    >
+      <mat-nav-list>
+        <ng-container *ngFor="let item of menuItems">
+          <ng-container *ngIf="item.hasAccess$ | async">
+            <a
+              *ngIf="item.link"
+              mat-list-item
+              [routerLink]="[item.link]"
+              (click)="menuItemAction(item) && clickToClose && drawer.close()"
+              routerLinkActive="active"
+              >{{ item.text }}</a
+            >
+            <ng-container *ngIf="item.externalLink">
+              <a mat-list-item (click)="openExternal(item) && menuItemAction(item) && clickToClose && drawer.close()">
+                {{ item.text }}<mat-icon class="ml-auto">open_in_new</mat-icon>
+              </a>
+            </ng-container>
+            <a
+              *ngIf="!item.link && !item.externalLink"
+              mat-list-item
+              (click)="menuItemAction(item) && clickToClose && drawer.close()"
+              >{{ item.text }}</a
+            >
+          </ng-container>
+        </ng-container>
+      </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
