@@ -9,7 +9,7 @@ import { MenuItem } from './layout/models';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'ngxs-smart-selectors';
+  title = 'ngxs-diner';
 
   menuItems: MenuItem[] = [
     {
