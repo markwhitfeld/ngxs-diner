@@ -28,22 +28,22 @@ export class LayoutComponent implements OnInit, OnDestroy {
     this.mobileQuery.addListener(this.mobileQueryListener);
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
   ngOnDestroy(): void {
     this.mobileQuery.removeListener(this.mobileQueryListener);
   }
 
   menuItemAction(item: MenuItem): boolean {
-    if (item?.actionOnClick) {
+    if (item && item.actionOnClick) {
       return item.actionOnClick();
     }
     return true;
   }
 
   openExternal(item: MenuItem): boolean {
-    if (item?.externalLink) {
-      window.open(item?.externalLink, '_blank');
+    if (item && item.externalLink) {
+      window.open(item.externalLink, '_blank');
       return true;
     }
     return false;
