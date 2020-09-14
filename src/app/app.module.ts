@@ -10,6 +10,7 @@ import { KitchenModule } from './kitchen/kitchen.module';
 import { LayoutModule } from './layout/layout.module';
 import { RecipeModule } from './recipies/recipes.module';
 import { RestaurantModule } from './restaurant/restaurant.module';
+import { StockModule } from './stock/stock.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -27,6 +28,7 @@ import { RestaurantModule } from './restaurant/restaurant.module';
     RecipeModule,
     RestaurantModule,
     KitchenModule,
+    StockModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

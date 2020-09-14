@@ -32,7 +32,9 @@
           "name": "eggs"
         },
         {
-          "name": "olive oil"
+          "name": "olive oil",
+          "amount": "1",
+          "unit": "dash"
         },
         {
           "amount": "50",
@@ -40,10 +42,14 @@
           "name": "butter"
         },
         {
-          "name": "parsley"
+          "name": "parsley",
+          "amount": "0.5",
+          "unit": "bunch"
         },
         {
-          "name": "dill"
+          "name": "dill",
+          "amount": "0.5",
+          "unit": "bunch"
         },
         {
           "amount": "1",
@@ -423,13 +429,19 @@
           "name": "eggplants"
         },
         {
-          "unit": "extra virgin olive oil"
+          "name": "extra virgin olive oil",
+          "amount": "1",
+          "unit": "dash"
         },
         {
-          "name": "thyme"
+          "name": "thyme",
+          "amount": "0.5",
+          "unit": "handful"
         },
         {
-          "name": "salt, black pepper"
+          "name": "salt, black pepper",
+          "amount": "1",
+          "unit": "sprinkle"
         }
       ],
       "ingredientGroup": [
@@ -970,7 +982,9 @@
               "name": "Sukrin Gold "
             },
             {
-              "name": "oregano"
+              "name": "oregano",
+              "amount": "0.5",
+              "unit": "handful"
             }
           ]
         },
@@ -1161,10 +1175,14 @@
           "preparation": "to taste"
         },
         {
-          "name": "Parsley"
+          "name": "Parsley",
+          "amount": "0.5",
+          "unit": "bunch"
         },
         {
-          "name": "balsamic reduction"
+          "name": "balsamic reduction",
+          "amount": "3",
+          "unit": "splash"
         }
       ],
       "step": [
@@ -1560,7 +1578,8 @@
               "unit": "tsp"
             },
             {
-              "amount": "A pinch",
+              "amount": "1",
+              "unit": "pinch",
               "name": "salt"
             }
           ]
@@ -1663,12 +1682,12 @@
           "preparation": "(or 6 leaves)"
         },
         {
-          "amount": "Some",
+          "amount": "1",
           "name": "Fresh cilantro",
           "preparation": "chopped"
         },
         {
-          "amount": "Some",
+          "amount": "1",
           "name": "Thai basil"
         },
         {

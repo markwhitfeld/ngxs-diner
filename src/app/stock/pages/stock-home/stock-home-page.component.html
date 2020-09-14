@@ -1,0 +1,7 @@
+<div class="grid-container">
+  <h1 class="mat-h1">Required Stock</h1>
+  <div></div>
+  <ng-container *ngIf="viewModel$ | async as viewModel">
+    <app-stock-orders-list [ingredientOrders]="viewModel.ingredientOrders"></app-stock-orders-list>
+  </ng-container>
+</div>

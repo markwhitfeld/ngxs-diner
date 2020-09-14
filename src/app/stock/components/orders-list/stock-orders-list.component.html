@@ -1,0 +1,14 @@
+<table class="orders-table mat-elevation-z2" mat-table #table [dataSource]="ingredientOrders">
+  <ng-container matColumnDef="count">
+    <th mat-header-cell *matHeaderCellDef>Orders</th>
+    <td mat-cell *matCellDef="let row">{{ row.quantity }} {{ row.unit }}</td>
+  </ng-container>
+  <ng-container matColumnDef="ingredient">
+    <th mat-header-cell *matHeaderCellDef>Item</th>
+    <td mat-cell *matCellDef="let row">{{ row.name }}</td>
+  </ng-container>
+  <ng-container *ngIf="['count', 'ingredient'] as displayedColumns">
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </ng-container>
+</table>

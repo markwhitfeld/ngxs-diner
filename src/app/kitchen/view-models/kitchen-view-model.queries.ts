@@ -1,6 +1,6 @@
 import { Selector } from '@ngxs/store';
 
-import { ItemCountMap, ProductionSheetQueries } from '../../restaurant/queries/production-sheet.queries';
+import { ItemCountMap, OrdersQueries } from '../../restaurant/queries/orders.queries';
 
 export interface KitchenViewModel {
   productionSheet: ItemCount[];
@@ -12,7 +12,7 @@ export interface ItemCount {
 }
 
 export class KitchenViewModelQueries {
-  @Selector([ProductionSheetQueries.getItemCountMap])
+  @Selector([OrdersQueries.getAllOrderedItemsCountMap])
   static getViewModel(itemCountMap: ItemCountMap): KitchenViewModel {
     const productionSheet = Object.keys(itemCountMap).map(key => ({
       item: key,
