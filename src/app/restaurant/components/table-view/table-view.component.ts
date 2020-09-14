@@ -8,7 +8,7 @@ import { Store } from '@ngxs/store';
 import { Observable } from 'rxjs';
 
 import { OrderViewModel, OrderViewModelQueries } from '../../queries/order.queries';
-import { AddTableChoice } from '../../state/actions';
+import { AddTableChoice, RemoveTableChoice } from '../../state/actions';
 
 export interface TableViewDialogData {
   tableName: string;
@@ -36,6 +36,10 @@ export class TableViewComponent implements OnInit {
 
   addChoice(recipeName: string): void {
     this.store.dispatch(new AddTableChoice(this.data.tableName, recipeName));
+  }
+
+  removeChoice(recipeName: string): void {
+    this.store.dispatch(new RemoveTableChoice(this.data.tableName, recipeName));
   }
 }
 
