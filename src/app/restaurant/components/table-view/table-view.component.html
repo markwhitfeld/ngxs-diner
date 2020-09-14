@@ -1,7 +1,6 @@
 <h1 mat-dialog-title>Orders for {{ data.tableName }}</h1>
 <ng-container *ngIf="tableOrder$ | async as tableOrder">
   <div mat-dialog-content>
-    <h3>Customers:</h3>
     <h3>Order:</h3>
     <span *ngIf="!tableOrder.ordered.length">(Nothing ordered)</span>
     <table class="orders-table" mat-table #table [dataSource]="tableOrder.ordered">

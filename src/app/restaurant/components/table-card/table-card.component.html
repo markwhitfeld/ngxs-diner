@@ -10,7 +10,8 @@
       <div>(Unoccupied)</div>
     </ng-container>
     <ng-container *ngIf="tableOrder.isOpen">
-      <div>{{ tableOrder.order?.persons || 0 }} seated</div>
+      <mat-icon>group</mat-icon>
+      <!-- <div>{{ tableOrder.order?.persons || 0 }} seated</div> -->
     </ng-container>
   </mat-card-content>
   <mat-card-actions>

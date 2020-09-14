@@ -1,6 +1,6 @@
 <table class="orders-table mat-elevation-z2" mat-table #table [dataSource]="ingredientOrders">
   <ng-container matColumnDef="count">
-    <th mat-header-cell *matHeaderCellDef>Orders</th>
+    <th mat-header-cell *matHeaderCellDef>Quantity</th>
     <td mat-cell *matCellDef="let row">{{ row.quantity }} {{ row.unit }}</td>
   </ng-container>
   <ng-container matColumnDef="ingredient">

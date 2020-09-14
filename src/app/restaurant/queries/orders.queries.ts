@@ -29,7 +29,6 @@ export class OrdersQueries {
   @Selector([OrdersState.orders])
   static getAllOrderedItemsCountMap(orders: OrdersMap): ItemCountMap {
     const orderChoices = flatten(Object.keys(orders).map(key => orders[key].choices));
-
     const itemCounts = orderChoices.reduce<ItemCountMap>((map, item) => {
       const currentCount = map[item] || 0;
       map[item] = currentCount + 1;
