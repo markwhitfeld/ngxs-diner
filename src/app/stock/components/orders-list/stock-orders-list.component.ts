@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
 import { Store } from '@ngxs/store';
-import { IngredientOrder } from 'src/app/restaurant/queries/orders.queries';
+
+import { IngredientOrder } from '../../models';
 
 export interface StockOrdersListDialogData {
   tableName: string;
@@ -16,7 +17,7 @@ export class StockOrdersListComponent implements OnInit {
   @Input()
   ingredientOrders: IngredientOrder[];
 
-  constructor(private store: Store) {}
+  constructor(private store: Store) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 }
