@@ -1,6 +1,6 @@
 import { Selector } from '@ngxs/store';
 
-import { ItemCountMap, ProductionSheetQueries } from '../queries/production-sheet.queries';
+import { ItemCountMap, ProductionSheetQueries } from '../../restaurant/queries/production-sheet.queries';
 
 export interface KitchenViewModel {
   productionSheet: ItemCount[];

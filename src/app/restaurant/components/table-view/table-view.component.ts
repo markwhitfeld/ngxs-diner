@@ -7,8 +7,8 @@ import { MatTableModule } from '@angular/material/table';
 import { Store } from '@ngxs/store';
 import { Observable } from 'rxjs';
 
-import { OrderViewModel, OrderViewModelQueries } from '../../queries/order.queries';
 import { AddTableChoice, RemoveTableChoice } from '../../state/actions';
+import { OrderViewModel, OrderViewModelQueries } from '../../view-models/order-view-model.queries';
 
 export interface TableViewDialogData {
   tableName: string;

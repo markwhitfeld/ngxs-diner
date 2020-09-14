@@ -1,8 +1,8 @@
 import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
 import { Store } from '@ngxs/store';
 
-import { TableOrderViewModel } from '../../queries/table.queries';
 import { CloseTable, EditTableOrder, OpenTable } from '../../state/actions';
+import { TableOrderViewModel } from '../../view-models/table-view-model.queries';
 
 @Component({
   selector: 'app-table-card',

@@ -1,7 +1,8 @@
 import { Selector } from '@ngxs/store';
 import { flatten } from 'ramda';
-import { OrdersMap } from 'src/app/restaurant/models';
-import { OrdersState } from 'src/app/restaurant/state/orders.state';
+
+import { OrdersMap } from '../models';
+import { OrdersState } from '../state/orders.state';
 
 export interface ItemCountMap {
   [name: string]: number;
