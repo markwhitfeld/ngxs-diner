@@ -11,5 +11,6 @@ import { TableViewComponent } from './table-view.component';
   declarations: [TableViewComponent],
   imports: [CommonModule, MatDialogModule, MatButtonModule, MatTableModule, MatIconModule],
   exports: [TableViewComponent],
+  entryComponents: [TableViewComponent],
 })
 export class TableViewComponentModule {}
