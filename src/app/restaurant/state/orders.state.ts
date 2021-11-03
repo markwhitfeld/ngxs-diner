@@ -8,7 +8,7 @@ import { AddTableChoice, CloseTable, OpenTable, RemoveTableChoice } from './acti
 type OrdersStateModel = OrdersMap;
 
 type LocalStateModel = OrdersStateModel;
-type LocalStateContext = StateContext<LocalStateModel>;
+type LocalStateContext = StateContext<OrdersStateModel>;
 
 @State<OrdersStateModel>({
   name: 'orders',
@@ -40,7 +40,7 @@ export class OrdersState {
   }
 
   @Action(AddTableChoice)
-  protected addTableChoice(ctx: LocalStateContext, action: AddTableChoice): void {
+  protected addTableChoice(ctx: StateContext<OrdersStateModel>, action: AddTableChoice): void {
     const { tableName, choice } = action;
     ctx.setState(
       patch<LocalStateModel>({
