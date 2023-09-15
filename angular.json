@@ -124,7 +124,6 @@
       }
     }
   },
-  "defaultProject": "ngxs-diner",
   "cli": {
     "analytics": "bd23c0ea-0f8e-4f81-84c9-57dc9cda1bc4"
   }
