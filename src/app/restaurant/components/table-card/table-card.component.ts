@@ -3,12 +3,23 @@ import { Store } from '@ngxs/store';
 
 import { CloseTable, EditTableOrder, OpenTable } from '../../state/actions';
 import { TableOrderViewModel } from '../../view-models/table-view-model.queries';
+import { MatLegacyButtonModule } from '@angular/material/legacy-button';
+import { MatIconModule } from '@angular/material/icon';
+import { NgIf } from '@angular/common';
+import { MatLegacyCardModule } from '@angular/material/legacy-card';
 
 @Component({
-  selector: 'app-table-card',
-  templateUrl: './table-card.component.html',
-  styleUrls: ['./table-card.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'app-table-card',
+    templateUrl: './table-card.component.html',
+    styleUrls: ['./table-card.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [
+        MatLegacyCardModule,
+        NgIf,
+        MatIconModule,
+        MatLegacyButtonModule,
+    ],
 })
 export class TableCardComponent implements OnInit {
   @Input()

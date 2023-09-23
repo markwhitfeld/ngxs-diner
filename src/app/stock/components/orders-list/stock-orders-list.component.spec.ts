@@ -8,8 +8,8 @@ describe('StockOrdersListComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ StockOrdersListComponent ]
-    })
+    imports: [StockOrdersListComponent]
+})
     .compileComponents();
   });
 

@@ -2,12 +2,33 @@ import { MediaMatcher } from '@angular/cdk/layout';
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnDestroy, OnInit } from '@angular/core';
 
 import { MenuItem } from './models';
+import { RouterLinkActive, RouterLink, RouterOutlet } from '@angular/router';
+import { NgFor, NgIf, AsyncPipe } from '@angular/common';
+import { MatLegacyListModule } from '@angular/material/legacy-list';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatIconModule } from '@angular/material/icon';
+import { MatLegacyButtonModule } from '@angular/material/legacy-button';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 @Component({
-  selector: 'app-layout',
-  templateUrl: './layout.component.html',
-  styleUrls: ['./layout.component.scss'],
-  changeDetection: ChangeDetectionStrategy.Default,
+    selector: 'app-layout',
+    templateUrl: './layout.component.html',
+    styleUrls: ['./layout.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Default,
+    standalone: true,
+    imports: [
+        MatToolbarModule,
+        MatLegacyButtonModule,
+        MatIconModule,
+        MatSidenavModule,
+        MatLegacyListModule,
+        NgFor,
+        NgIf,
+        RouterLinkActive,
+        RouterLink,
+        RouterOutlet,
+        AsyncPipe,
+    ],
 })
 export class LayoutComponent implements OnInit, OnDestroy {
   @Input()

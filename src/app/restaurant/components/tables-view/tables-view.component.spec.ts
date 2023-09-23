@@ -15,8 +15,7 @@ describe('TablesViewComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [TablesViewComponent],
-      imports: [
+    imports: [
         NoopAnimationsModule,
         LayoutModule,
         MatButtonModule,
@@ -24,8 +23,9 @@ describe('TablesViewComponent', () => {
         MatGridListModule,
         MatIconModule,
         MatMenuModule,
-      ]
-    }).compileComponents();
+        TablesViewComponent,
+    ]
+}).compileComponents();
   }));
 
   beforeEach(() => {
